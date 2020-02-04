@@ -15,7 +15,13 @@ const forecast = (latitude, longitude, callback) => {
             // console.log(`forecast: temp: ${body.currently.temperature}`);
             // console.log(`forecast: precipitation: ${body.currently.precipProbability}`);
             // console.log(body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain.');
-            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain.')
+            callback(undefined, 
+                            body.daily.data[0].summary 
+                            + ' It is currently ' + body.currently.temperature + ' degrees out.' 
+                            + ' There is a ' + body.currently.precipProbability + '% chance of rain.'
+                            + ' The expected high for the day is ' + body.daily.data[0].apparentTemperatureHigh + '.'
+                            + ' The expected low for the day is '  + body.daily.data[0].apparentTemperatureLow + '.'
+            )
         }
     })
 }
