@@ -9,6 +9,7 @@ const forecast = require('./utils/forecast');
 
 // Create the express object - refer to expressjs.com for API reference
 const app = express();
+const port = process.env.PORT || 3000;
 
 // configure static pages
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -117,6 +118,6 @@ app.get('*', (req, res, next) => {
 
 
 // start the server listening on port 3000
-app.listen(3000, () => {
-    console.log('Express, listening on port 3000');
+app.listen(port, () => {
+    console.log(`Express, listening on port ${port}`);
 })
